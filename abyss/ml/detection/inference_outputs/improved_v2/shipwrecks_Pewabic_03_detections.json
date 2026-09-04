@@ -1,0 +1,118 @@
+{
+  "annotated_image_path": "abyss/ml/detection/inference_outputs/improved_v2/shipwrecks_Pewabic_03_annotated.jpg",
+  "confidence_threshold": 0.25,
+  "detections": [
+    {
+      "bbox_xyxy": [
+        187.22344970703125,
+        321.89996337890625,
+        426.897705078125,
+        372.33172607421875
+      ],
+      "class_id": 2,
+      "class_name": "Shipwreck",
+      "composite_confidence": 0.7037351130349494,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 0,
+      "detector_confidence": 0.703122079372406,
+      "image_quality_details": {
+        "contrast_score": 1.0,
+        "image_quality_score": 0.9869670500452016,
+        "laplacian_variance": 1870.81494140625,
+        "local_snr": 43.05400387606444,
+        "mean_intensity": 109.07131958007812,
+        "sharpness_score": 1.0,
+        "snr_score": 0.9627630001291473,
+        "std_intensity": 67.38611602783203
+      },
+      "image_quality_score": 0.9869670500452016,
+      "shadow_consistency_score": 0.42234227701232774,
+      "shadow_features": {
+        "seabed_mean_intensity": 114.0,
+        "seabed_region_xyxy": [
+          639,
+          312,
+          640,
+          382
+        ],
+        "shadow_consistency_score": 0.42234227701232774,
+        "shadow_continuity_score": 0.3617113850616389,
+        "shadow_darkness_contrast": 0.0,
+        "shadow_geometry_score": 1.0,
+        "shadow_length_relative_to_object": 0.8208333333333333,
+        "shadow_mean_intensity": 118.2686767578125,
+        "shadow_region_xyxy": [
+          427,
+          312,
+          640,
+          382
+        ]
+      }
+    },
+    {
+      "bbox_xyxy": [
+        193.04241943359375,
+        310.4427490234375,
+        437.4208984375,
+        367.7467041015625
+      ],
+      "class_id": 2,
+      "class_name": "Shipwreck",
+      "composite_confidence": 0.46140143819177865,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 1,
+      "detector_confidence": 0.2987912595272064,
+      "image_quality_details": {
+        "contrast_score": 1.0,
+        "image_quality_score": 0.9869670500452016,
+        "laplacian_variance": 1870.81494140625,
+        "local_snr": 43.05400387606444,
+        "mean_intensity": 109.07131958007812,
+        "sharpness_score": 1.0,
+        "snr_score": 0.9627630001291473,
+        "std_intensity": 67.38611602783203
+      },
+      "image_quality_score": 0.9869670500452016,
+      "shadow_consistency_score": 0.4236663623320725,
+      "shadow_features": {
+        "seabed_mean_intensity": 114.0,
+        "seabed_region_xyxy": [
+          639,
+          298,
+          640,
+          380
+        ],
+        "shadow_consistency_score": 0.4236663623320725,
+        "shadow_continuity_score": 0.36833181166036255,
+        "shadow_darkness_contrast": 0.0,
+        "shadow_geometry_score": 1.0,
+        "shadow_length_relative_to_object": 0.7663934426229508,
+        "shadow_mean_intensity": 116.85041809082031,
+        "shadow_region_xyxy": [
+          437,
+          298,
+          640,
+          380
+        ]
+      }
+    }
+  ],
+  "image_path": "abyss/data/processed/detection/test/images/shipwrecks_Pewabic_03.jpg",
+  "json_output_path": "abyss/ml/detection/inference_outputs/improved_v2/shipwrecks_Pewabic_03_detections.json",
+  "preprocess_mode": "baseline",
+  "preprocessed_shape": [
+    640,
+    640,
+    3
+  ],
+  "processing_latency_ms": 630.3712080116384,
+  "weights_path": "abyss/ml/detection/weights/improved_v2_baseline_finetune_adamw.pt"
+}

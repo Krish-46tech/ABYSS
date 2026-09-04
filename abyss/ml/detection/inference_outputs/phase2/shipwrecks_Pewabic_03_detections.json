@@ -1,0 +1,39 @@
+{
+  "annotated_image_path": "abyss/ml/detection/inference_outputs/phase2/shipwrecks_Pewabic_03_annotated.jpg",
+  "confidence_threshold": 0.25,
+  "detections": [
+    {
+      "bbox_xyxy": [
+        176.3931884765625,
+        342.90814208984375,
+        276.68853759765625,
+        367.94464111328125
+      ],
+      "class_id": 2,
+      "class_name": "Shipwreck",
+      "detection_id": 0,
+      "detector_confidence": 0.3944108784198761
+    },
+    {
+      "bbox_xyxy": [
+        159.50552368164062,
+        343.9989013671875,
+        257.4720764160156,
+        368.151123046875
+      ],
+      "class_id": 2,
+      "class_name": "Shipwreck",
+      "detection_id": 1,
+      "detector_confidence": 0.25522539019584656
+    }
+  ],
+  "image_path": "abyss/data/processed/detection/test/images/shipwrecks_Pewabic_03.jpg",
+  "json_output_path": "abyss/ml/detection/inference_outputs/phase2/shipwrecks_Pewabic_03_detections.json",
+  "preprocessed_shape": [
+    640,
+    640,
+    3
+  ],
+  "processing_latency_ms": 471.78866699687205,
+  "weights_path": "abyss/ml/detection/weights/baseline_v1.pt"
+}

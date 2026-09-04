@@ -1,0 +1,168 @@
+{
+  "annotated_image_path": "abyss/ml/detection/inference_outputs/phase3/side_scan_sonar_ship-080_png.rf.626d1c7098ccf0ef08f978419e5e0256_annotated.jpg",
+  "confidence_threshold": 0.05,
+  "detections": [
+    {
+      "bbox_xyxy": [
+        28.675048828125,
+        15.53680419921875,
+        552.44140625,
+        545.5374145507812
+      ],
+      "class_id": 1,
+      "class_name": "Ship",
+      "composite_confidence": 0.5887947362811381,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 0,
+      "detector_confidence": 0.6763325929641724,
+      "image_quality_details": {
+        "contrast_score": 0.6846018433570862,
+        "image_quality_score": 0.5894453761409609,
+        "laplacian_variance": 304.2269592285156,
+        "local_snr": 13.746860292807591,
+        "mean_intensity": 42.35111999511719,
+        "sharpness_score": 0.3042269592285156,
+        "snr_score": 0.6844225685457072,
+        "std_intensity": 43.814517974853516
+      },
+      "image_quality_score": 0.5894453761409609,
+      "shadow_consistency_score": 0.32553052637221264,
+      "shadow_features": {
+        "seabed_mean_intensity": 9.8671875,
+        "seabed_region_xyxy": [
+          639,
+          0,
+          640,
+          640
+        ],
+        "shadow_consistency_score": 0.32553052637221264,
+        "shadow_continuity_score": 0.1748224431818182,
+        "shadow_darkness_contrast": 0.0,
+        "shadow_geometry_score": 0.830188679245283,
+        "shadow_length_relative_to_object": 0.1660377358490566,
+        "shadow_mean_intensity": 22.19680404663086,
+        "shadow_region_xyxy": [
+          552,
+          0,
+          640,
+          640
+        ]
+      }
+    },
+    {
+      "bbox_xyxy": [
+        46.88330078125,
+        104.57568359375,
+        637.892578125,
+        572.8798828125
+      ],
+      "class_id": 1,
+      "class_name": "Ship",
+      "composite_confidence": 0.26893002636797886,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 1,
+      "detector_confidence": 0.25146979093551636,
+      "image_quality_details": {
+        "contrast_score": 0.6846018433570862,
+        "image_quality_score": 0.5894453761409609,
+        "laplacian_variance": 304.2269592285156,
+        "local_snr": 13.746860292807591,
+        "mean_intensity": 42.35111999511719,
+        "sharpness_score": 0.3042269592285156,
+        "snr_score": 0.6844225685457072,
+        "std_intensity": 43.814517974853516
+      },
+      "image_quality_score": 0.5894453761409609,
+      "shadow_consistency_score": 0.0007953828923842486,
+      "shadow_features": {
+        "seabed_mean_intensity": 9.693163871765137,
+        "seabed_region_xyxy": [
+          639,
+          11,
+          640,
+          640
+        ],
+        "shadow_consistency_score": 0.0007953828923842486,
+        "shadow_continuity_score": 0.0,
+        "shadow_darkness_contrast": 0.0017675175386316635,
+        "shadow_geometry_score": 0.0,
+        "shadow_length_relative_to_object": 0.0,
+        "shadow_mean_intensity": 9.542924880981445,
+        "shadow_region_xyxy": [
+          638,
+          11,
+          640,
+          640
+        ]
+      }
+    },
+    {
+      "bbox_xyxy": [
+        384.6947021484375,
+        245.6671142578125,
+        634.253662109375,
+        574.9598999023438
+      ],
+      "class_id": 1,
+      "class_name": "Ship",
+      "composite_confidence": 0.20324076815016728,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 2,
+      "detector_confidence": 0.14131100475788116,
+      "image_quality_details": {
+        "contrast_score": 0.6846018433570862,
+        "image_quality_score": 0.5894453761409609,
+        "laplacian_variance": 304.2269592285156,
+        "local_snr": 13.746860292807591,
+        "mean_intensity": 42.35111999511719,
+        "sharpness_score": 0.3042269592285156,
+        "snr_score": 0.6844225685457072,
+        "std_intensity": 43.814517974853516
+      },
+      "image_quality_score": 0.5894453761409609,
+      "shadow_consistency_score": 0.0028254503362319045,
+      "shadow_features": {
+        "seabed_mean_intensity": 9.091304779052734,
+        "seabed_region_xyxy": [
+          639,
+          180,
+          640,
+          640
+        ],
+        "shadow_consistency_score": 0.0028254503362319045,
+        "shadow_continuity_score": 0.0,
+        "shadow_darkness_contrast": 0.006278778524959788,
+        "shadow_geometry_score": 0.0,
+        "shadow_length_relative_to_object": 0.0,
+        "shadow_mean_intensity": 8.557608604431152,
+        "shadow_region_xyxy": [
+          634,
+          180,
+          640,
+          640
+        ]
+      }
+    }
+  ],
+  "image_path": "abyss/data/processed/detection/test/images/side_scan_sonar_ship-080_png.rf.626d1c7098ccf0ef08f978419e5e0256.jpg",
+  "json_output_path": "abyss/ml/detection/inference_outputs/phase3/side_scan_sonar_ship-080_png.rf.626d1c7098ccf0ef08f978419e5e0256_detections.json",
+  "preprocessed_shape": [
+    640,
+    640,
+    3
+  ],
+  "processing_latency_ms": 473.7678750025225,
+  "weights_path": "abyss/ml/detection/weights/baseline_v1.pt"
+}

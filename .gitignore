@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local environment files
+.env
+.env.*
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Frontend dependencies/build output
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/*.tsbuildinfo
+
+# ABYSS local data and generated artifacts
+abyss/data/raw/*
+!abyss/data/raw/.gitkeep
+abyss/data/processed/*
+!abyss/data/processed/.gitkeep
+abyss/data/splits/*
+!abyss/data/splits/.gitkeep
+abyss/logs/*
+!abyss/logs/.gitkeep
+abyss/docs/preprocessing_examples/*
+!abyss/docs/preprocessing_examples/.gitkeep
+
+# Model outputs and weights
+*.pt
+*.pth
+*.onnx
+*.engine
+*.tflite
+*.mlmodel
+!abyss/ml/detection/weights/baseline_v1.pt
+!abyss/ml/detection/weights/improved_v2_baseline_finetune_adamw.pt
+runs/
+wandb/
+mlruns/
+abyss/mlflow/
+
+# Large archives/media commonly used for datasets
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.mp4
+*.mov
+*.avi
+
+# macOS
+.DS_Store

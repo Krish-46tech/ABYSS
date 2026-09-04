@@ -1,0 +1,27 @@
+{
+  "annotated_image_path": "abyss/ml/detection/inference_outputs/phase2/side_scan_sonar_ship-408_png.rf.8d5fe6c8c879fb0a89573621f64dd7d2_annotated.jpg",
+  "confidence_threshold": 0.25,
+  "detections": [
+    {
+      "bbox_xyxy": [
+        190.34588623046875,
+        97.1492919921875,
+        422.46331787109375,
+        588.34619140625
+      ],
+      "class_id": 1,
+      "class_name": "Ship",
+      "detection_id": 0,
+      "detector_confidence": 0.6184312701225281
+    }
+  ],
+  "image_path": "abyss/data/processed/detection/test/images/side_scan_sonar_ship-408_png.rf.8d5fe6c8c879fb0a89573621f64dd7d2.jpg",
+  "json_output_path": "abyss/ml/detection/inference_outputs/phase2/side_scan_sonar_ship-408_png.rf.8d5fe6c8c879fb0a89573621f64dd7d2_detections.json",
+  "preprocessed_shape": [
+    640,
+    640,
+    3
+  ],
+  "processing_latency_ms": 470.64570899965474,
+  "weights_path": "abyss/ml/detection/weights/baseline_v1.pt"
+}

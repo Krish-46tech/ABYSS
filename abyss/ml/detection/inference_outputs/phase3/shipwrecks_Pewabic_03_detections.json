@@ -1,0 +1,525 @@
+{
+  "annotated_image_path": "abyss/ml/detection/inference_outputs/phase3/shipwrecks_Pewabic_03_annotated.jpg",
+  "confidence_threshold": 0.05,
+  "detections": [
+    {
+      "bbox_xyxy": [
+        176.3931884765625,
+        342.90814208984375,
+        276.68853759765625,
+        367.94464111328125
+      ],
+      "class_id": 2,
+      "class_name": "Shipwreck",
+      "composite_confidence": 0.524039937060966,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 0,
+      "detector_confidence": 0.3944108784198761,
+      "image_quality_details": {
+        "contrast_score": 1.0,
+        "image_quality_score": 0.9869670500452016,
+        "laplacian_variance": 1870.81494140625,
+        "local_snr": 43.05400387606444,
+        "mean_intensity": 109.07131958007812,
+        "sharpness_score": 1.0,
+        "snr_score": 0.9627630001291473,
+        "std_intensity": 67.38611602783203
+      },
+      "image_quality_score": 0.9869670500452016,
+      "shadow_consistency_score": 0.45,
+      "shadow_features": {
+        "seabed_mean_intensity": 154.89828491210938,
+        "seabed_region_xyxy": [
+          429,
+          338,
+          479,
+          373
+        ],
+        "shadow_consistency_score": 0.45,
+        "shadow_continuity_score": 0.0,
+        "shadow_darkness_contrast": 1.0,
+        "shadow_geometry_score": 0.0,
+        "shadow_length_relative_to_object": 0.0,
+        "shadow_mean_intensity": 55.290977478027344,
+        "shadow_region_xyxy": [
+          277,
+          338,
+          429,
+          373
+        ]
+      }
+    },
+    {
+      "bbox_xyxy": [
+        159.50552368164062,
+        343.9989013671875,
+        257.4720764160156,
+        368.151123046875
+      ],
+      "class_id": 2,
+      "class_name": "Shipwreck",
+      "composite_confidence": 0.4405286441265483,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 1,
+      "detector_confidence": 0.25522539019584656,
+      "image_quality_details": {
+        "contrast_score": 1.0,
+        "image_quality_score": 0.9869670500452016,
+        "laplacian_variance": 1870.81494140625,
+        "local_snr": 43.05400387606444,
+        "mean_intensity": 109.07131958007812,
+        "sharpness_score": 1.0,
+        "snr_score": 0.9627630001291473,
+        "std_intensity": 67.38611602783203
+      },
+      "image_quality_score": 0.9869670500452016,
+      "shadow_consistency_score": 0.45,
+      "shadow_features": {
+        "seabed_mean_intensity": 184.2922821044922,
+        "seabed_region_xyxy": [
+          403,
+          339,
+          451,
+          373
+        ],
+        "shadow_consistency_score": 0.45,
+        "shadow_continuity_score": 0.0,
+        "shadow_darkness_contrast": 1.0,
+        "shadow_geometry_score": 0.0,
+        "shadow_length_relative_to_object": 0.0,
+        "shadow_mean_intensity": 30.42365074157715,
+        "shadow_region_xyxy": [
+          257,
+          339,
+          403,
+          373
+        ]
+      }
+    },
+    {
+      "bbox_xyxy": [
+        360.49835205078125,
+        337.6483459472656,
+        426.56024169921875,
+        368.3694763183594
+      ],
+      "class_id": 2,
+      "class_name": "Shipwreck",
+      "composite_confidence": 0.43029035063635174,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 2,
+      "detector_confidence": 0.249513179063797,
+      "image_quality_details": {
+        "contrast_score": 1.0,
+        "image_quality_score": 0.9869670500452016,
+        "laplacian_variance": 1870.81494140625,
+        "local_snr": 43.05400387606444,
+        "mean_intensity": 109.07131958007812,
+        "sharpness_score": 1.0,
+        "snr_score": 0.9627630001291473,
+        "std_intensity": 67.38611602783203
+      },
+      "image_quality_score": 0.9869670500452016,
+      "shadow_consistency_score": 0.41594516594516595,
+      "shadow_features": {
+        "seabed_mean_intensity": 122.93276977539062,
+        "seabed_region_xyxy": [
+          527,
+          332,
+          561,
+          374
+        ],
+        "shadow_consistency_score": 0.41594516594516595,
+        "shadow_continuity_score": 0.32972582972582976,
+        "shadow_darkness_contrast": 0.0,
+        "shadow_geometry_score": 1.0,
+        "shadow_length_relative_to_object": 1.4776119402985075,
+        "shadow_mean_intensity": 138.05833435058594,
+        "shadow_region_xyxy": [
+          427,
+          332,
+          527,
+          374
+        ]
+      }
+    },
+    {
+      "bbox_xyxy": [
+        218.45993041992188,
+        342.38250732421875,
+        275.45697021484375,
+        366.89105224609375
+      ],
+      "class_id": 2,
+      "class_name": "Shipwreck",
+      "composite_confidence": 0.29053426656519643,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 3,
+      "detector_confidence": 0.08025185018777847,
+      "image_quality_details": {
+        "contrast_score": 1.0,
+        "image_quality_score": 0.9869670500452016,
+        "laplacian_variance": 1870.81494140625,
+        "local_snr": 43.05400387606444,
+        "mean_intensity": 109.07131958007812,
+        "sharpness_score": 1.0,
+        "snr_score": 0.9627630001291473,
+        "std_intensity": 67.38611602783203
+      },
+      "image_quality_score": 0.9869670500452016,
+      "shadow_consistency_score": 0.2249487322174451,
+      "shadow_features": {
+        "seabed_mean_intensity": 42.58367156982422,
+        "seabed_region_xyxy": [
+          361,
+          337,
+          389,
+          372
+        ],
+        "shadow_consistency_score": 0.2249487322174451,
+        "shadow_continuity_score": 0.0,
+        "shadow_darkness_contrast": 0.4998860715943224,
+        "shadow_geometry_score": 0.0,
+        "shadow_length_relative_to_object": 0.0,
+        "shadow_mean_intensity": 0.09335548430681229,
+        "shadow_region_xyxy": [
+          275,
+          337,
+          361,
+          372
+        ]
+      }
+    },
+    {
+      "bbox_xyxy": [
+        183.65765380859375,
+        325.85052490234375,
+        502.06475830078125,
+        365.9840087890625
+      ],
+      "class_id": 2,
+      "class_name": "Shipwreck",
+      "composite_confidence": 0.334780687942105,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 4,
+      "detector_confidence": 0.07832928746938705,
+      "image_quality_details": {
+        "contrast_score": 1.0,
+        "image_quality_score": 0.9869670500452016,
+        "laplacian_variance": 1870.81494140625,
+        "local_snr": 43.05400387606444,
+        "mean_intensity": 109.07131958007812,
+        "sharpness_score": 1.0,
+        "snr_score": 0.9627630001291473,
+        "std_intensity": 67.38611602783203
+      },
+      "image_quality_score": 0.9869670500452016,
+      "shadow_consistency_score": 0.45194852725716234,
+      "shadow_features": {
+        "seabed_mean_intensity": 114.0,
+        "seabed_region_xyxy": [
+          639,
+          318,
+          640,
+          374
+        ],
+        "shadow_consistency_score": 0.45194852725716234,
+        "shadow_continuity_score": 0.37573185011709603,
+        "shadow_darkness_contrast": 0.05956034940831801,
+        "shadow_geometry_score": 1.0,
+        "shadow_length_relative_to_object": 0.3836477987421384,
+        "shadow_mean_intensity": 108.93737030029297,
+        "shadow_region_xyxy": [
+          502,
+          318,
+          640,
+          374
+        ]
+      }
+    },
+    {
+      "bbox_xyxy": [
+        372.1087646484375,
+        323.2833557128906,
+        430.1629638671875,
+        369.9648132324219
+      ],
+      "class_id": 2,
+      "class_name": "Shipwreck",
+      "composite_confidence": 0.3254758347599987,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 5,
+      "detector_confidence": 0.07412204891443253,
+      "image_quality_details": {
+        "contrast_score": 1.0,
+        "image_quality_score": 0.9869670500452016,
+        "laplacian_variance": 1870.81494140625,
+        "local_snr": 43.05400387606444,
+        "mean_intensity": 109.07131958007812,
+        "sharpness_score": 1.0,
+        "snr_score": 0.9627630001291473,
+        "std_intensity": 67.38611602783203
+      },
+      "image_quality_score": 0.9869670500452016,
+      "shadow_consistency_score": 0.4180459770114942,
+      "shadow_features": {
+        "seabed_mean_intensity": 122.61326599121094,
+        "seabed_region_xyxy": [
+          517,
+          314,
+          546,
+          379
+        ],
+        "shadow_consistency_score": 0.4180459770114942,
+        "shadow_continuity_score": 0.3402298850574712,
+        "shadow_darkness_contrast": 0.0,
+        "shadow_geometry_score": 1.0,
+        "shadow_length_relative_to_object": 1.5,
+        "shadow_mean_intensity": 133.6201629638672,
+        "shadow_region_xyxy": [
+          430,
+          314,
+          517,
+          379
+        ]
+      }
+    },
+    {
+      "bbox_xyxy": [
+        174.5857696533203,
+        324.7689208984375,
+        470.73455810546875,
+        376.332763671875
+      ],
+      "class_id": 2,
+      "class_name": "Shipwreck",
+      "composite_confidence": 0.323375829678128,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 6,
+      "detector_confidence": 0.05956852808594704,
+      "image_quality_details": {
+        "contrast_score": 1.0,
+        "image_quality_score": 0.9869670500452016,
+        "laplacian_variance": 1870.81494140625,
+        "local_snr": 43.05400387606444,
+        "mean_intensity": 109.07131958007812,
+        "sharpness_score": 1.0,
+        "snr_score": 0.9627630001291473,
+        "std_intensity": 67.38611602783203
+      },
+      "image_quality_score": 0.9869670500452016,
+      "shadow_consistency_score": 0.45120651408759727,
+      "shadow_features": {
+        "seabed_mean_intensity": 114.0,
+        "seabed_region_xyxy": [
+          639,
+          315,
+          640,
+          386
+        ],
+        "shadow_consistency_score": 0.45120651408759727,
+        "shadow_continuity_score": 0.3801896345392617,
+        "shadow_darkness_contrast": 0.055930193732766545,
+        "shadow_geometry_score": 1.0,
+        "shadow_length_relative_to_object": 0.5168918918918919,
+        "shadow_mean_intensity": 109.24593353271484,
+        "shadow_region_xyxy": [
+          471,
+          315,
+          640,
+          386
+        ]
+      }
+    },
+    {
+      "bbox_xyxy": [
+        164.31063842773438,
+        339.99822998046875,
+        271.2605895996094,
+        371.256591796875
+      ],
+      "class_id": 2,
+      "class_name": "Shipwreck",
+      "composite_confidence": 0.3207065979658503,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 7,
+      "detector_confidence": 0.05552197992801666,
+      "image_quality_details": {
+        "contrast_score": 1.0,
+        "image_quality_score": 0.9869670500452016,
+        "laplacian_variance": 1870.81494140625,
+        "local_snr": 43.05400387606444,
+        "mean_intensity": 109.07131958007812,
+        "sharpness_score": 1.0,
+        "snr_score": 0.9627630001291473,
+        "std_intensity": 67.38611602783203
+      },
+      "image_quality_score": 0.9869670500452016,
+      "shadow_consistency_score": 0.45,
+      "shadow_features": {
+        "seabed_mean_intensity": 145.7678680419922,
+        "seabed_region_xyxy": [
+          431,
+          334,
+          485,
+          377
+        ],
+        "shadow_consistency_score": 0.45,
+        "shadow_continuity_score": 0.0,
+        "shadow_darkness_contrast": 1.0,
+        "shadow_geometry_score": 0.0,
+        "shadow_length_relative_to_object": 0.0,
+        "shadow_mean_intensity": 54.684593200683594,
+        "shadow_region_xyxy": [
+          271,
+          334,
+          431,
+          377
+        ]
+      }
+    },
+    {
+      "bbox_xyxy": [
+        156.265869140625,
+        346.1053161621094,
+        235.38140869140625,
+        368.2195129394531
+      ],
+      "class_id": 2,
+      "class_name": "Shipwreck",
+      "composite_confidence": 0.22974488074768967,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 8,
+      "detector_confidence": 0.05391911789774895,
+      "image_quality_details": {
+        "contrast_score": 1.0,
+        "image_quality_score": 0.9869670500452016,
+        "laplacian_variance": 1870.81494140625,
+        "local_snr": 43.05400387606444,
+        "mean_intensity": 109.07131958007812,
+        "sharpness_score": 1.0,
+        "snr_score": 0.9627630001291473,
+        "std_intensity": 67.38611602783203
+      },
+      "image_quality_score": 0.9869670500452016,
+      "shadow_consistency_score": 0.0,
+      "shadow_features": {
+        "seabed_mean_intensity": 43.372501373291016,
+        "seabed_region_xyxy": [
+          353,
+          342,
+          393,
+          372
+        ],
+        "shadow_consistency_score": 0.0,
+        "shadow_continuity_score": 0.0,
+        "shadow_darkness_contrast": 0.0,
+        "shadow_geometry_score": 0.0,
+        "shadow_length_relative_to_object": 0.0,
+        "shadow_mean_intensity": 46.25904083251953,
+        "shadow_region_xyxy": [
+          235,
+          342,
+          353,
+          372
+        ]
+      }
+    },
+    {
+      "bbox_xyxy": [
+        162.74313354492188,
+        332.72943115234375,
+        271.1098327636719,
+        367.18206787109375
+      ],
+      "class_id": 2,
+      "class_name": "Shipwreck",
+      "composite_confidence": 0.31801808575977275,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 9,
+      "detector_confidence": 0.0510411262512207,
+      "image_quality_details": {
+        "contrast_score": 1.0,
+        "image_quality_score": 0.9869670500452016,
+        "laplacian_variance": 1870.81494140625,
+        "local_snr": 43.05400387606444,
+        "mean_intensity": 109.07131958007812,
+        "sharpness_score": 1.0,
+        "snr_score": 0.9627630001291473,
+        "std_intensity": 67.38611602783203
+      },
+      "image_quality_score": 0.9869670500452016,
+      "shadow_consistency_score": 0.45,
+      "shadow_features": {
+        "seabed_mean_intensity": 143.56712341308594,
+        "seabed_region_xyxy": [
+          433,
+          326,
+          487,
+          374
+        ],
+        "shadow_consistency_score": 0.45,
+        "shadow_continuity_score": 0.0,
+        "shadow_darkness_contrast": 1.0,
+        "shadow_geometry_score": 0.0,
+        "shadow_length_relative_to_object": 0.0,
+        "shadow_mean_intensity": 55.95486068725586,
+        "shadow_region_xyxy": [
+          271,
+          326,
+          433,
+          374
+        ]
+      }
+    }
+  ],
+  "image_path": "abyss/data/processed/detection/test/images/shipwrecks_Pewabic_03.jpg",
+  "json_output_path": "abyss/ml/detection/inference_outputs/phase3/shipwrecks_Pewabic_03_detections.json",
+  "preprocessed_shape": [
+    640,
+    640,
+    3
+  ],
+  "processing_latency_ms": 471.5956250001909,
+  "weights_path": "abyss/ml/detection/weights/baseline_v1.pt"
+}

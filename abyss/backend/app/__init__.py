@@ -1,0 +1,2 @@
+"""ABYSS FastAPI backend package."""
+

@@ -1,0 +1,118 @@
+{
+  "annotated_image_path": "abyss/ml/detection/inference_outputs/improved_v2/side_scan_sonar_plane-062_png.rf.4bb90a3bb1dbcf9f5393f80db868f722_annotated.jpg",
+  "confidence_threshold": 0.25,
+  "detections": [
+    {
+      "bbox_xyxy": [
+        278.90057373046875,
+        116.01739501953125,
+        629.7439575195312,
+        492.84320068359375
+      ],
+      "class_id": 1,
+      "class_name": "Ship",
+      "composite_confidence": 0.5093246290239782,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 0,
+      "detector_confidence": 0.5357850193977356,
+      "image_quality_details": {
+        "contrast_score": 0.7984163165092468,
+        "image_quality_score": 0.6691499107006128,
+        "laplacian_variance": 170.9716033935547,
+        "local_snr": 30.476069209968756,
+        "mean_intensity": 68.89077758789062,
+        "sharpness_score": 0.1709716033935547,
+        "snr_score": 0.8772585235672153,
+        "std_intensity": 51.0986442565918
+      },
+      "image_quality_score": 0.6691499107006128,
+      "shadow_consistency_score": 0.27011817622607204,
+      "shadow_features": {
+        "seabed_mean_intensity": 165.07211303710938,
+        "seabed_region_xyxy": [
+          639,
+          41,
+          640,
+          568
+        ],
+        "shadow_consistency_score": 0.27011817622607204,
+        "shadow_continuity_score": 0.5034788108791904,
+        "shadow_darkness_contrast": 0.3146021225873162,
+        "shadow_geometry_score": 0.07957559681697612,
+        "shadow_length_relative_to_object": 0.015915119363395226,
+        "shadow_mean_intensity": 138.3309326171875,
+        "shadow_region_xyxy": [
+          630,
+          41,
+          640,
+          568
+        ]
+      }
+    },
+    {
+      "bbox_xyxy": [
+        279.85107421875,
+        220.40670776367188,
+        630.392578125,
+        479.5592346191406
+      ],
+      "class_id": 1,
+      "class_name": "Ship",
+      "composite_confidence": 0.4258121017227112,
+      "confidence_fusion_weights": {
+        "detector_confidence": 0.6,
+        "image_quality_score": 0.2,
+        "shadow_consistency_score": 0.2
+      },
+      "detection_id": 1,
+      "detector_confidence": 0.36027708649635315,
+      "image_quality_details": {
+        "contrast_score": 0.7984163165092468,
+        "image_quality_score": 0.6691499107006128,
+        "laplacian_variance": 170.9716033935547,
+        "local_snr": 30.476069209968756,
+        "mean_intensity": 68.89077758789062,
+        "sharpness_score": 0.1709716033935547,
+        "snr_score": 0.8772585235672153,
+        "std_intensity": 51.0986442565918
+      },
+      "image_quality_score": 0.6691499107006128,
+      "shadow_consistency_score": 0.37907933842388375,
+      "shadow_features": {
+        "seabed_mean_intensity": 180.74176025390625,
+        "seabed_region_xyxy": [
+          639,
+          168,
+          640,
+          532
+        ],
+        "shadow_consistency_score": 0.37907933842388375,
+        "shadow_continuity_score": 0.5755494505494506,
+        "shadow_darkness_contrast": 0.5199321073644302,
+        "shadow_geometry_score": 0.08571428571428572,
+        "shadow_length_relative_to_object": 0.017142857142857144,
+        "shadow_mean_intensity": 136.5475311279297,
+        "shadow_region_xyxy": [
+          630,
+          168,
+          640,
+          532
+        ]
+      }
+    }
+  ],
+  "image_path": "abyss/data/processed/detection/test/images/side_scan_sonar_plane-062_png.rf.4bb90a3bb1dbcf9f5393f80db868f722.jpg",
+  "json_output_path": "abyss/ml/detection/inference_outputs/improved_v2/side_scan_sonar_plane-062_png.rf.4bb90a3bb1dbcf9f5393f80db868f722_detections.json",
+  "preprocess_mode": "baseline",
+  "preprocessed_shape": [
+    640,
+    640,
+    3
+  ],
+  "processing_latency_ms": 739.2623339983402,
+  "weights_path": "abyss/ml/detection/weights/improved_v2_baseline_finetune_adamw.pt"
+}

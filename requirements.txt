@@ -1,0 +1,10 @@
+numpy
+opencv-python
+pillow
+ultralytics
+fastapi
+uvicorn
+pytest
+python-multipart
+pyyaml
+mlflow
