@@ -299,3 +299,5 @@ Curated for review and further study. Grouped by the pipeline stage each paper i
 ---
 
 **SIH26057** · Smart India Hackathon 2026 · Marine Debris & Anomaly Detection
+
+***Part of this README.md is AI generated***
