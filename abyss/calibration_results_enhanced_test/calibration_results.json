@@ -1,0 +1,16 @@
+{
+  "model_path": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/ml/detection/weights/improved_v2_baseline_finetune_adamw.pt",
+  "test_images_path": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection_enhanced/test/images",
+  "test_labels_path": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection_enhanced/test/labels",
+  "num_test_images": 129,
+  "num_ground_truth_objects": 111,
+  "num_predictions_evaluated": 122,
+  "true_positives": 67,
+  "false_positives": 55,
+  "iou_threshold": 0.5,
+  "n_bins": 10,
+  "ece_raw_confidence": 0.0928,
+  "ece_composite_confidence": 0.143,
+  "improvement": -0.0502,
+  "improvement_note": "Positive value means composite confidence is BETTER calibrated (lower ECE) than raw detector confidence. Negative means it's worse \u2014 report this honestly either way."
+}

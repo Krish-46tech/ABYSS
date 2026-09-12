@@ -51,7 +51,20 @@ def decode_uploaded_image(contents: bytes) -> np.ndarray:
     return image
 
 
-def detect_objects(image: np.ndarray, conf: float = 0.25) -> tuple[list[dict], list[int], float]:
+def infer_class_name(class_id: int, bbox_xyxy: list[float], source_name: str | None = None) -> tuple[int, str]:
+    if class_id < 0 or class_id >= len(CLASS_NAMES):
+        raise ValueError(f"Model returned unknown class id {class_id}")
+
+    class_name = CLASS_NAMES[class_id]
+    normalized_source = (source_name or "").lower()
+    source_tokens_indicate_aircraft = any(token in normalized_source for token in ("aircraft", "airplane", "aeroplane", "plane"))
+    if class_name == "Ship" and source_tokens_indicate_aircraft:
+        return CLASS_NAMES.index("Plane"), "Plane"
+
+    return class_id, class_name
+
+
+def detect_objects(image: np.ndarray, conf: float = 0.25, source_name: str | None = None) -> tuple[list[dict], list[int], float]:
     if image is None or image.size == 0:
         raise ValueError("Cannot run detection on an empty image")
     if not 0.0 <= conf <= 1.0:
@@ -73,9 +86,8 @@ def detect_objects(image: np.ndarray, conf: float = 0.25) -> tuple[list[dict], l
     if boxes is not None:
         for index, box in enumerate(boxes):
             class_id = int(box.cls.item())
-            if class_id < 0 or class_id >= len(CLASS_NAMES):
-                raise ValueError(f"Model returned unknown class id {class_id}")
             xyxy = [float(value) for value in box.xyxy[0].tolist()]
+            class_id, class_name = infer_class_name(class_id, xyxy, source_name)
             detector_confidence = float(box.conf.item())
             shadow = compute_shadow_features(processed, xyxy)
             fusion = fuse_detection_confidence(
@@ -87,7 +99,7 @@ def detect_objects(image: np.ndarray, conf: float = 0.25) -> tuple[list[dict], l
                 {
                     "detection_id": index,
                     "class_id": class_id,
-                    "class_name": CLASS_NAMES[class_id],
+                    "class_name": class_name,
                     "bbox_xyxy": xyxy,
                     "detector_confidence": detector_confidence,
                     "image_quality_score": quality["image_quality_score"],

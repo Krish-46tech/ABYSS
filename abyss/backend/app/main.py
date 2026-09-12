@@ -34,7 +34,7 @@ async def detect(file: UploadFile = File(...), conf: float = Query(default=0.25,
     contents = await file.read()
     try:
         image = decode_uploaded_image(contents)
-        detections, image_shape, latency_ms = detect_objects(image, conf=conf)
+        detections, image_shape, latency_ms = detect_objects(image, conf=conf, source_name=file.filename)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     except FileNotFoundError as exc:

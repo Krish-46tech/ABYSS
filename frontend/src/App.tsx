@@ -1,15 +1,15 @@
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import {
   AlertTriangle,
   CheckCircle2,
   Crosshair,
   Loader2,
-  MapPin,
   Radar,
   ServerCrash,
   Upload,
 } from "lucide-react";
 import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import * as THREE from "three";
 
 const API_BASE = import.meta.env.VITE_ABYSS_API_BASE ?? "http://127.0.0.1:8000";
 const DETECTION_SPACE_SIZE = 640;
@@ -96,6 +96,19 @@ function formatScore(value: number) {
 
 function bboxCenter([x1, y1, x2, y2]: [number, number, number, number]) {
   return { x: (x1 + x2) / 2, y: (y1 + y2) / 2 };
+}
+
+function contactPosition(detection: SessionDetection, maxOffset = 1): [number, number, number] {
+  if (detection.geo) {
+    const x = (detection.geo.east_offset_m / maxOffset) * 7;
+    const z = -(detection.geo.north_offset_m / maxOffset) * 7;
+    return [x, 0.52, z];
+  }
+
+  const center = bboxCenter(detection.bbox_xyxy);
+  const x = ((center.x / DETECTION_SPACE_SIZE) - 0.5) * 13.5;
+  const z = ((center.y / DETECTION_SPACE_SIZE) - 0.5) * 13.5;
+  return [x, 0.52, z];
 }
 
 function SonarCanvas({
@@ -237,11 +250,7 @@ function ConfidenceBreakdown({ detection }: { detection: SessionDetection | unde
       </div>
       {detection.geo && (
         <div className="mt-4 border-t border-slate-800 pt-4 text-sm text-slate-300">
-          <div className="flex items-center gap-2">
-            <MapPin size={16} />
-            <span className="font-mono">{detection.geo.lat.toFixed(6)}, {detection.geo.lon.toFixed(6)}</span>
-            <span className="border border-amber-400 px-2 py-0.5 text-xs text-amber-100">{detection.geo.geolocation_source}</span>
-          </div>
+          <span className="font-mono">{detection.geo.lat.toFixed(6)}, {detection.geo.lon.toFixed(6)}</span>
         </div>
       )}
     </section>
@@ -280,17 +289,8 @@ function PriorityList({ items, detections }: { items: PriorityItem[]; detections
                     <td className="py-3 pr-3 font-mono text-xs text-slate-300">
                       conf {formatScore(item.score_breakdown.confidence_component)} · hazard {formatScore(item.score_breakdown.hazard_component)} · size {formatScore(item.score_breakdown.size_component)} · prox {formatScore(item.score_breakdown.proximity_component)}
                     </td>
-                    <td className="py-3 pr-3 text-xs text-slate-300">
-                      {detection?.geo ? (
-                        <span>
-                          {detection.geo.lat.toFixed(5)}, {detection.geo.lon.toFixed(5)}
-                          <span className="ml-2 border border-amber-500 px-1.5 py-0.5 text-amber-100">
-                            {detection.geo.geolocation_source}
-                          </span>
-                        </span>
-                      ) : (
-                        "not requested"
-                      )}
+                    <td className="py-3 pr-3 font-mono text-xs text-slate-300">
+                      {detection?.geo ? `${detection.geo.lat.toFixed(5)}, ${detection.geo.lon.toFixed(5)}` : "not requested"}
                     </td>
                   </tr>
                 );
@@ -300,6 +300,114 @@ function PriorityList({ items, detections }: { items: PriorityItem[]; detections
         </div>
       )}
     </section>
+  );
+}
+
+function SeabedTerrain() {
+  const geometry = useMemo(() => {
+    const width = 18;
+    const segments = 72;
+    const geo = new THREE.PlaneGeometry(width, width, segments, segments);
+    const position = geo.attributes.position as THREE.BufferAttribute;
+    for (let i = 0; i < position.count; i += 1) {
+      const x = position.getX(i);
+      const y = position.getY(i);
+      const ridge = Math.sin(x * 1.6) * 0.18 + Math.cos(y * 1.15) * 0.13 + Math.sin((x + y) * 2.4) * 0.06;
+      position.setZ(i, ridge);
+    }
+    geo.computeVertexNormals();
+    return geo;
+  }, []);
+
+  return (
+    <mesh rotation={[-Math.PI / 2, 0, 0]} geometry={geometry}>
+      <meshStandardMaterial color="#24525a" roughness={0.88} metalness={0.05} wireframe={false} />
+    </mesh>
+  );
+}
+
+function SonarSweep() {
+  const ref = useRef<THREE.Mesh>(null);
+  useFrame((_, delta) => {
+    if (ref.current) ref.current.rotation.y += delta * 0.55;
+  });
+
+  return (
+    <mesh ref={ref} position={[0, 0.06, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+      <ringGeometry args={[1.2, 8.2, 96, 1, 0, Math.PI / 2.8]} />
+      <meshBasicMaterial color="#22d3ee" transparent opacity={0.16} side={THREE.DoubleSide} />
+    </mesh>
+  );
+}
+
+function AircraftMarker({ selected }: { selected: boolean }) {
+  return (
+    <group scale={selected ? 1.22 : 1}>
+      <mesh rotation={[0, 0, Math.PI / 2]}>
+        <coneGeometry args={[0.34, 1.35, 4]} />
+        <meshStandardMaterial color={selected ? "#facc15" : "#38bdf8"} emissive={selected ? "#713f12" : "#0e7490"} />
+      </mesh>
+      <mesh scale={[1.35, 0.1, 0.24]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color="#a5f3fc" emissive="#155e75" />
+      </mesh>
+      <mesh position={[-0.48, 0, 0]} scale={[0.42, 0.08, 0.55]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color="#67e8f9" />
+      </mesh>
+    </group>
+  );
+}
+
+function VesselMarker({ selected, wreck }: { selected: boolean; wreck: boolean }) {
+  return (
+    <group scale={selected ? 1.18 : 1} rotation={[0, 0.25, 0]}>
+      <mesh scale={[0.62, 0.22, 1.05]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color={wreck ? "#fb7185" : selected ? "#facc15" : "#22d3ee"} emissive={wreck ? "#7f1d1d" : "#164e63"} />
+      </mesh>
+      <mesh position={[0, 0.24, -0.15]} scale={[0.34, 0.24, 0.34]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color="#e0f2fe" roughness={0.35} />
+      </mesh>
+      <mesh position={[0, -0.02, 0.72]} rotation={[Math.PI / 2, 0, 0]}>
+        <coneGeometry args={[0.31, 0.55, 3]} />
+        <meshStandardMaterial color={wreck ? "#fecdd3" : "#a5f3fc"} />
+      </mesh>
+    </group>
+  );
+}
+
+function ContactMarker({
+  detection,
+  selected,
+  maxOffset,
+  onSelect,
+}: {
+  detection: SessionDetection;
+  selected: boolean;
+  maxOffset: number;
+  onSelect: (id: number) => void;
+}) {
+  const ref = useRef<THREE.Group>(null);
+  useFrame(({ clock }) => {
+    if (!ref.current) return;
+    ref.current.position.y = contactPosition(detection, maxOffset)[1] + Math.sin(clock.elapsedTime * 2.2 + detection.detection_id) * 0.06;
+  });
+
+  return (
+    <group ref={ref} position={contactPosition(detection, maxOffset)} onClick={() => onSelect(detection.detection_id)}>
+      <mesh position={[0, -0.42, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <ringGeometry args={[0.52, 0.58, 40]} />
+        <meshBasicMaterial color={selected ? "#facc15" : "#67e8f9"} transparent opacity={0.75} side={THREE.DoubleSide} />
+      </mesh>
+      {detection.class_name === "Plane" || detection.class_name === "Aircraft" ? (
+        <AircraftMarker selected={selected} />
+      ) : (
+        <VesselMarker selected={selected} wreck={detection.class_name === "Shipwreck" || detection.class_name === "UNKNOWN_ANOMALY"} />
+      )}
+      <pointLight color={selected ? "#facc15" : "#22d3ee"} intensity={selected ? 1.15 : 0.55} distance={4.5} />
+    </group>
   );
 }
 
@@ -314,32 +422,28 @@ function SeabedMap({ detections, selectedId, onSelect }: { detections: SessionDe
   return (
     <section className="border border-slate-800 bg-slate-950 p-4">
       <div className="flex items-center justify-between gap-3">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-300">3D Map</h2>
-        <span className="text-xs text-slate-400">Seabed terrain is procedural; markers use API geolocation output.</span>
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-300">3D Contact View</h2>
+        <span className="text-xs text-slate-400">Markers use API geolocation offsets.</span>
       </div>
-      <div className="mt-4 h-72 border border-slate-800 bg-slate-900">
-        <Canvas camera={{ position: [0, 9, 12], fov: 45 }}>
-          <ambientLight intensity={0.7} />
-          <directionalLight position={[4, 7, 5]} intensity={1} />
-          <mesh rotation={[-Math.PI / 2, 0, 0]}>
-            <planeGeometry args={[18, 18, 48, 48]} />
-            <meshStandardMaterial color="#1e5662" wireframe />
-          </mesh>
-          {geolocated.map((detection) => {
-            const x = ((detection.geo?.east_offset_m ?? 0) / maxOffset) * 7;
-            const z = -((detection.geo?.north_offset_m ?? 0) / maxOffset) * 7;
-            const selected = detection.detection_id === selectedId;
-            return (
-              <mesh
-                key={detection.detection_id}
-                position={[x, selected ? 0.75 : 0.45, z]}
-                onClick={() => onSelect(detection.detection_id)}
-              >
-                <sphereGeometry args={[selected ? 0.38 : 0.25, 24, 24]} />
-                <meshStandardMaterial color={detection.class_name === "UNKNOWN_ANOMALY" ? "#fb7185" : selected ? "#facc15" : "#22d3ee"} />
-              </mesh>
-            );
-          })}
+      <div className="mt-4 h-72 overflow-hidden border border-slate-800 bg-[radial-gradient(circle_at_50%_20%,#14313a,#05080b_70%)]">
+        <Canvas camera={{ position: [0, 7.5, 11], fov: 43 }}>
+          <color attach="background" args={["#05080b"]} />
+          <fog attach="fog" args={["#071016", 8, 24]} />
+          <ambientLight intensity={0.45} />
+          <directionalLight position={[4, 7, 5]} intensity={1.1} color="#dffcff" />
+          <pointLight position={[-5, 3, -4]} color="#0ea5e9" intensity={1.3} distance={14} />
+          <SeabedTerrain />
+          <gridHelper args={[18, 18, "#1e93a8", "#16404a"]} position={[0, 0.08, 0]} />
+          <SonarSweep />
+          {geolocated.map((detection) => (
+            <ContactMarker
+              key={detection.detection_id}
+              detection={detection}
+              selected={detection.detection_id === selectedId}
+              maxOffset={maxOffset}
+              onSelect={onSelect}
+            />
+          ))}
         </Canvas>
       </div>
     </section>

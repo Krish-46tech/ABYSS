@@ -7,6 +7,7 @@ from pathlib import Path
 from fastapi.testclient import TestClient
 
 from abyss.backend.app.main import app
+from abyss.backend.app.services import infer_class_name
 
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -36,6 +37,12 @@ def test_detect_rejects_corrupt_upload() -> None:
     response = client.post("/detect", files={"file": ("bad.jpg", b"not an image", "image/jpeg")})
     assert response.status_code == 400
     assert "readable image" in response.json()["detail"]
+
+
+def test_aircraft_source_context_corrects_ship_collapse() -> None:
+    class_id, class_name = infer_class_name(1, [40, 80, 520, 390], "side_scan_sonar_plane-062.jpg")
+    assert class_id == 0
+    assert class_name == "Plane"
 
 
 def test_geolocate_with_provided_metadata() -> None:
@@ -99,4 +106,3 @@ def test_priority_ranking_has_score_breakdown() -> None:
     for item in ranked:
         assert item["score_breakdown"]["confidence_weight"] == 0.45
         assert 0.0 <= item["priority_score"] <= 1.0
-
