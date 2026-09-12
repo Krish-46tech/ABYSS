@@ -8,6 +8,7 @@ navigation metadata; that response is labeled as simulated.
 from __future__ import annotations
 
 import math
+import hashlib
 import sys
 import time
 from functools import lru_cache
@@ -22,7 +23,7 @@ sys.path.append(str(PROJECT_ROOT / "abyss" / "ml" / "preprocessing"))
 sys.path.append(str(PROJECT_ROOT / "abyss" / "ml" / "shadow_confidence"))
 sys.path.append(str(PROJECT_ROOT / "abyss" / "ml" / "detection"))
 
-from confidence_fusion import fuse_detection_confidence  # type: ignore  # noqa: E402
+from confidence_fusion import calibrated_probabilities, feature_vector, load_calibration  # type: ignore  # noqa: E402
 from image_quality import compute_image_quality_score  # type: ignore  # noqa: E402
 from preprocess import denoise_and_normalize, letterbox  # type: ignore  # noqa: E402
 from shadow_features import compute_shadow_features  # type: ignore  # noqa: E402
@@ -30,6 +31,7 @@ from utils import CLASS_NAMES  # type: ignore  # noqa: E402
 
 
 WEIGHTS_PATH = PROJECT_ROOT / "abyss" / "ml" / "detection" / "weights" / "improved_v2_baseline_finetune_adamw.pt"
+CALIBRATION_PATH = PROJECT_ROOT / "abyss" / "ml" / "shadow_confidence" / "calibration_improved_v4.json"
 TARGET_SIZE = 640
 DEFAULT_SIMULATED_ORIGIN = (18.5204, 73.8567)
 
@@ -51,32 +53,24 @@ def decode_uploaded_image(contents: bytes) -> np.ndarray:
     return image
 
 
-def infer_class_name(class_id: int, bbox_xyxy: list[float], source_name: str | None = None) -> tuple[int, str]:
-    if class_id < 0 or class_id >= len(CLASS_NAMES):
-        raise ValueError(f"Model returned unknown class id {class_id}")
-
-    class_name = CLASS_NAMES[class_id]
-    normalized_source = (source_name or "").lower()
-    source_tokens_indicate_aircraft = any(token in normalized_source for token in ("aircraft", "airplane", "aeroplane", "plane"))
-    if class_name == "Ship" and source_tokens_indicate_aircraft:
-        return CLASS_NAMES.index("Plane"), "Plane"
-
-    return class_id, class_name
-
-
-def detect_objects(image: np.ndarray, conf: float = 0.25, source_name: str | None = None) -> tuple[list[dict], list[int], float]:
+def detect_objects(image: np.ndarray, conf: float = 0.25) -> tuple[list[dict], list[int], float]:
     if image is None or image.size == 0:
         raise ValueError("Cannot run detection on an empty image")
     if not 0.0 <= conf <= 1.0:
         raise ValueError("Detector confidence threshold must be between 0 and 1")
 
-    processed, _, _, _ = letterbox(denoise_and_normalize(image), TARGET_SIZE)
-    quality_image, _, _, _ = letterbox(image, TARGET_SIZE)
-    quality = compute_image_quality_score(quality_image)
+    artifact = load_calibration(CALIBRATION_PATH)
+    if (Path(artifact["weights"]).resolve() != WEIGHTS_PATH.resolve()
+            or artifact["preprocess_mode"] != "baseline" or artifact["imgsz"] != TARGET_SIZE
+            or artifact.get("weights_sha256") != hashlib.sha256(WEIGHTS_PATH.read_bytes()).hexdigest()):
+        raise ValueError("Backend calibration artifact does not match detector or preprocessing")
+    model_size = artifact["imgsz"]
+    processed, _, _, _ = letterbox(denoise_and_normalize(image), model_size)
+    quality = compute_image_quality_score(processed)
     model = get_model()
 
     start = time.perf_counter()
-    results = model.predict(processed, imgsz=TARGET_SIZE, conf=conf, verbose=False)
+    results = model.predict(processed, imgsz=model_size, conf=conf, verbose=False)
     latency_ms = (time.perf_counter() - start) * 1000.0
     if not results:
         raise RuntimeError("Ultralytics returned no prediction result objects")
@@ -86,15 +80,15 @@ def detect_objects(image: np.ndarray, conf: float = 0.25, source_name: str | Non
     if boxes is not None:
         for index, box in enumerate(boxes):
             class_id = int(box.cls.item())
-            xyxy = [float(value) for value in box.xyxy[0].tolist()]
-            class_id, class_name = infer_class_name(class_id, xyxy, source_name)
+            if class_id < 0 or class_id >= len(CLASS_NAMES):
+                raise ValueError(f"Model returned unknown class id {class_id}")
+            model_xyxy = [float(value) for value in box.xyxy[0].tolist()]
+            xyxy = [value * TARGET_SIZE / model_size for value in model_xyxy]
+            class_name = CLASS_NAMES[class_id]
             detector_confidence = float(box.conf.item())
-            shadow = compute_shadow_features(processed, xyxy)
-            fusion = fuse_detection_confidence(
-                detector_confidence,
-                quality["image_quality_score"],
-                float(shadow["shadow_consistency_score"]),
-            )
+            shadow = compute_shadow_features(processed, model_xyxy)
+            features = feature_vector(detector_confidence, float(shadow["shadow_consistency_score"]), quality["image_quality_score"])
+            fused, final = calibrated_probabilities(np.asarray([features]), artifact)
             detections.append(
                 {
                     "detection_id": index,
@@ -104,10 +98,12 @@ def detect_objects(image: np.ndarray, conf: float = 0.25, source_name: str | Non
                     "detector_confidence": detector_confidence,
                     "image_quality_score": quality["image_quality_score"],
                     "shadow_consistency_score": shadow["shadow_consistency_score"],
-                    "composite_confidence": fusion["composite_confidence"],
+                    "logistic_fused_probability": float(fused[0]),
+                    "temperature_calibrated_probability": float(final[0]),
+                    "composite_confidence": float(final[0]),
                 }
             )
-    return detections, list(processed.shape), latency_ms
+    return detections, [TARGET_SIZE, TARGET_SIZE, processed.shape[2]], latency_ms
 
 
 def geolocate_pixel(

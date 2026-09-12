@@ -15,6 +15,8 @@ class DetectionBox(BaseModel):
     detector_confidence: float = Field(ge=0.0, le=1.0)
     image_quality_score: float = Field(ge=0.0, le=1.0)
     shadow_consistency_score: float = Field(ge=0.0, le=1.0)
+    logistic_fused_probability: float = Field(ge=0.0, le=1.0)
+    temperature_calibrated_probability: float = Field(ge=0.0, le=1.0)
     composite_confidence: float = Field(ge=0.0, le=1.0)
 
 
@@ -68,4 +70,3 @@ class PriorityItem(BaseModel):
 
 class PriorityResponse(BaseModel):
     ranked_detections: list[PriorityItem]
-

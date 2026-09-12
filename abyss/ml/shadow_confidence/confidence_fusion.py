@@ -1,50 +1,57 @@
-"""Transparent confidence fusion for ABYSS detections.
-
-This is a documented heuristic, not a trained calibration model. It combines
-the detector confidence with image quality and sonar-shadow consistency so a
-triage UI can surface uncertain detections honestly.
-"""
+"""Learned correctness probability from detector and sonar-image features."""
 
 from __future__ import annotations
 
+import json
+from pathlib import Path
 
-DEFAULT_WEIGHTS = {
-    "detector_confidence": 0.60,
-    "image_quality_score": 0.20,
-    "shadow_consistency_score": 0.20,
-}
+import numpy as np
+from scipy.special import expit
+
+FEATURE_NAMES = ("detector_confidence", "shadow_consistency_score", "image_quality_score")
+DEFAULT_ARTIFACT = Path(__file__).resolve().parent / "calibration_baseline_v1.json"
+IMPROVED_ARTIFACT = Path(__file__).resolve().parent / "calibration_improved_v4.json"
 
 
-def _clip01(value: float) -> float:
-    return float(max(0.0, min(1.0, value)))
+def artifact_for_weights(weights_path: Path) -> Path:
+    name = weights_path.name
+    if name == "baseline_v1.pt":
+        return DEFAULT_ARTIFACT
+    if name == "improved_v2_baseline_finetune_adamw.pt":
+        return IMPROVED_ARTIFACT
+    raise ValueError(f"No default calibration artifact for weights {weights_path}; pass --calibration-artifact")
 
 
-def fuse_detection_confidence(
-    detector_confidence: float,
-    image_quality_score: float,
-    shadow_consistency_score: float,
-    weights: dict[str, float] | None = None,
-) -> dict[str, float | dict[str, float]]:
-    weights = weights or DEFAULT_WEIGHTS
-    total_weight = sum(weights.values())
-    if total_weight <= 0:
-        raise ValueError("Confidence fusion weights must sum to a positive value")
+def feature_vector(detector_confidence: float, shadow_consistency_score: float, image_quality_score: float) -> list[float]:
+    values = [float(detector_confidence), float(shadow_consistency_score), float(image_quality_score)]
+    if not np.all(np.isfinite(values)) or any(value < 0 or value > 1 for value in values):
+        raise ValueError(f"Invalid confidence features: {values}")
+    return values
 
-    detector = _clip01(float(detector_confidence))
-    quality = _clip01(float(image_quality_score))
-    shadow = _clip01(float(shadow_consistency_score))
-    composite = (
-        weights["detector_confidence"] * detector
-        + weights["image_quality_score"] * quality
-        + weights["shadow_consistency_score"] * shadow
-    ) / total_weight
-    return {
-        "composite_confidence": _clip01(composite),
-        "weights": dict(weights),
-        "inputs": {
-            "detector_confidence": detector,
-            "image_quality_score": quality,
-            "shadow_consistency_score": shadow,
-        },
-    }
 
+def load_calibration(path: Path = DEFAULT_ARTIFACT) -> dict:
+    if not path.is_file():
+        raise FileNotFoundError(f"Calibration artifact missing: {path}. Run fit_calibration.py on validation data first.")
+    artifact = json.loads(path.read_text(encoding="utf-8"))
+    if artifact["feature_names"] != list(FEATURE_NAMES):
+        raise ValueError("Calibration artifact feature order does not match inference")
+    if artifact["temperature"] <= 0:
+        raise ValueError("Calibration temperature must be positive")
+    return artifact
+
+
+def calibrated_probabilities(features: np.ndarray, artifact: dict) -> tuple[np.ndarray, np.ndarray]:
+    x = np.asarray(features, dtype=float)
+    if x.ndim != 2 or x.shape[1] != len(FEATURE_NAMES) or not np.all(np.isfinite(x)):
+        raise ValueError("Expected finite N x 3 calibration features")
+    scaled = (x - np.asarray(artifact["scaler_mean"])) / np.asarray(artifact["scaler_scale"])
+    logits = scaled @ np.asarray(artifact["coefficients"]) + artifact["intercept"]
+    return expit(logits), expit(logits / artifact["temperature"])
+
+
+def fuse_detection_confidence(detector_confidence: float, image_quality_score: float, shadow_consistency_score: float) -> dict:
+    """Compatibility output for callers that still name the final score composite."""
+    artifact = load_calibration()
+    features = feature_vector(detector_confidence, shadow_consistency_score, image_quality_score)
+    _, final = calibrated_probabilities(np.asarray([features]), artifact)
+    return {"composite_confidence": float(final[0])}

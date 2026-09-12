@@ -1,0 +1,7 @@
+path: /Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug
+train: train/images
+val: /Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/val/images
+names:
+  0: Plane
+  1: Ship
+  2: Shipwreck

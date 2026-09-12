@@ -8,3 +8,6 @@ pytest
 python-multipart
 pyyaml
 mlflow
+scikit-learn
+scipy
+matplotlib

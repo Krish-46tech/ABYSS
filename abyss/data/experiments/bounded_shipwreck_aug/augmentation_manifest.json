@@ -1,0 +1,932 @@
+{
+  "source_yaml": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/data.yaml",
+  "candidate_yaml": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/data.yaml",
+  "source_train_image_count": 546,
+  "augmented_shipwreck_image_count": 115,
+  "candidate_train_image_count": 661,
+  "validation_images": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/val/images",
+  "test_images": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/test/images",
+  "split_filename_overlap": 0,
+  "augmentations": [
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Artificial_Reef_06.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Artificial_Reef_06.jpg",
+      "label_count": 1,
+      "rotation_degrees": 2.191386997143269,
+      "scale": 0.9539573427527741,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Barge_No_1_02.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Barge_No_1_02.jpg",
+      "label_count": 1,
+      "rotation_degrees": -7.7355578315435345,
+      "scale": 1.0626540478400546,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Barge_No_1_03.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Barge_No_1_03.jpg",
+      "label_count": 1,
+      "rotation_degrees": 6.6040892364435475,
+      "scale": 1.021327155153436,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Barge_No_1_04.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Barge_No_1_04.jpg",
+      "label_count": 1,
+      "rotation_degrees": 0.6979998634467659,
+      "scale": 1.0870144847575538,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Barge_No_1_05.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Barge_No_1_05.jpg",
+      "label_count": 1,
+      "rotation_degrees": 5.0536568659445145,
+      "scale": 0.9005477000340296,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Barge_No_1_06.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Barge_No_1_06.jpg",
+      "label_count": 1,
+      "rotation_degrees": -7.46263079511257,
+      "scale": 1.045931089285989,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Barge_No_1_14.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Barge_No_1_14.jpg",
+      "label_count": 1,
+      "rotation_degrees": -5.189510070359056,
+      "scale": 1.0726357844699774,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Barge_No_1_15.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Barge_No_1_15.jpg",
+      "label_count": 1,
+      "rotation_degrees": -3.2046097514018435,
+      "scale": 0.9845374442395317,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Corsair_02.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Corsair_02.jpg",
+      "label_count": 1,
+      "rotation_degrees": -7.5468852616725925,
+      "scale": 0.9248566552999128,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Corsair_03.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Corsair_03.jpg",
+      "label_count": 1,
+      "rotation_degrees": 2.3550321851880014,
+      "scale": 1.0230770222962509,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Corsican_02.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Corsican_02.jpg",
+      "label_count": 1,
+      "rotation_degrees": -1.861159131809865,
+      "scale": 1.0994419871578422,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Corsican_03.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Corsican_03.jpg",
+      "label_count": 1,
+      "rotation_degrees": 2.968671751691115,
+      "scale": 1.0300918552535634,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Corsican_05.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Corsican_05.jpg",
+      "label_count": 1,
+      "rotation_degrees": 3.0151476891350413,
+      "scale": 0.9777842847958208,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Corsican_06.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Corsican_06.jpg",
+      "label_count": 1,
+      "rotation_degrees": 3.543813443105307,
+      "scale": 1.0050708644951452,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_EB_Allen_06.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_EB_Allen_06.jpg",
+      "label_count": 1,
+      "rotation_degrees": -3.0361299910567094,
+      "scale": 0.9971670717663579,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_EB_Allen_07.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_EB_Allen_07.jpg",
+      "label_count": 1,
+      "rotation_degrees": 6.944696255299995,
+      "scale": 0.9715590393418141,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_EB_Allen_08.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_EB_Allen_08.jpg",
+      "label_count": 1,
+      "rotation_degrees": 1.144477291676175,
+      "scale": 0.9643738782151885,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_EB_Allen_16.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_EB_Allen_16.jpg",
+      "label_count": 1,
+      "rotation_degrees": -2.593420391885868,
+      "scale": 0.9783238001056322,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_EB_Allen_17.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_EB_Allen_17.jpg",
+      "label_count": 1,
+      "rotation_degrees": 6.244389632076677,
+      "scale": 0.945431518706676,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_EB_Allen_18.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_EB_Allen_18.jpg",
+      "label_count": 1,
+      "rotation_degrees": -6.655754502681843,
+      "scale": 1.0665288295306796,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_EB_Allen_21.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_EB_Allen_21.jpg",
+      "label_count": 1,
+      "rotation_degrees": 4.593572919818934,
+      "scale": 0.9478738885985905,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_EB_Allen_22.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_EB_Allen_22.jpg",
+      "label_count": 1,
+      "rotation_degrees": -7.0629114431168905,
+      "scale": 0.9672234121091321,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_EB_Allen_23.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_EB_Allen_23.jpg",
+      "label_count": 1,
+      "rotation_degrees": -5.595528529682575,
+      "scale": 0.9900678733298575,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_EB_Allen_24.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_EB_Allen_24.jpg",
+      "label_count": 1,
+      "rotation_degrees": -4.309724656100041,
+      "scale": 0.9104042602128819,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Egyptian_04.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Egyptian_04.jpg",
+      "label_count": 1,
+      "rotation_degrees": -1.5271705628555488,
+      "scale": 0.9397026089018511,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Egyptian_05.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Egyptian_05.jpg",
+      "label_count": 1,
+      "rotation_degrees": 1.2853181757896106,
+      "scale": 0.9597392265637845,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Egyptian_06.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Egyptian_06.jpg",
+      "label_count": 1,
+      "rotation_degrees": 2.75191804730175,
+      "scale": 0.9399030887936427,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Egyptian_08.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Egyptian_08.jpg",
+      "label_count": 1,
+      "rotation_degrees": -2.158237308082743,
+      "scale": 0.921099055914046,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Egyptian_09.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Egyptian_09.jpg",
+      "label_count": 1,
+      "rotation_degrees": 2.0657304246353476,
+      "scale": 1.0854309106135736,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Egyptian_10.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Egyptian_10.jpg",
+      "label_count": 1,
+      "rotation_degrees": 7.273447899051796,
+      "scale": 0.9999791627375294,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Egyptian_11.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Egyptian_11.jpg",
+      "label_count": 1,
+      "rotation_degrees": -1.1963420024147915,
+      "scale": 1.0240426904030757,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Egyptian_12.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Egyptian_12.jpg",
+      "label_count": 1,
+      "rotation_degrees": 7.183098799004245,
+      "scale": 0.9920090278618192,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Egyptian_13.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Egyptian_13.jpg",
+      "label_count": 1,
+      "rotation_degrees": 4.123661524932663,
+      "scale": 0.9994845390975239,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Egyptian_14.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Egyptian_14.jpg",
+      "label_count": 1,
+      "rotation_degrees": 4.57257121142092,
+      "scale": 0.9829311698711342,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Egyptian_15.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Egyptian_15.jpg",
+      "label_count": 1,
+      "rotation_degrees": 3.75173714861967,
+      "scale": 1.0422285755979501,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Haltiner_Barge_01.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Haltiner_Barge_01.jpg",
+      "label_count": 1,
+      "rotation_degrees": -6.161077867505517,
+      "scale": 1.045803023415262,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Haltiner_Barge_02.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Haltiner_Barge_02.jpg",
+      "label_count": 1,
+      "rotation_degrees": 6.838782857992959,
+      "scale": 1.0935852379849293,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Haltiner_Barge_03.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Haltiner_Barge_03.jpg",
+      "label_count": 1,
+      "rotation_degrees": 5.818241443929212,
+      "scale": 1.096239008013269,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Haltiner_Barge_04.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Haltiner_Barge_04.jpg",
+      "label_count": 1,
+      "rotation_degrees": 7.315362873775417,
+      "scale": 0.9297528024464996,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Haltiner_Barge_05.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Haltiner_Barge_05.jpg",
+      "label_count": 1,
+      "rotation_degrees": 6.23896889152833,
+      "scale": 1.0644747655086142,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Haltiner_Barge_06.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Haltiner_Barge_06.jpg",
+      "label_count": 1,
+      "rotation_degrees": -0.32019321907468523,
+      "scale": 0.9464745839278608,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Haltiner_Barge_07.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Haltiner_Barge_07.jpg",
+      "label_count": 1,
+      "rotation_degrees": 6.7764825565355125,
+      "scale": 0.9532260544584585,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Heart_Failure_02.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Heart_Failure_02.jpg",
+      "label_count": 1,
+      "rotation_degrees": 0.6229505219549907,
+      "scale": 0.9885505657949063,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Heart_Failure_03.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Heart_Failure_03.jpg",
+      "label_count": 1,
+      "rotation_degrees": -7.351828620985046,
+      "scale": 1.0464012391313122,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Heart_Failure_07.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Heart_Failure_07.jpg",
+      "label_count": 1,
+      "rotation_degrees": 1.8299719511839463,
+      "scale": 0.9056730730227043,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Heart_Failure_08.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Heart_Failure_08.jpg",
+      "label_count": 1,
+      "rotation_degrees": -7.744132327622848,
+      "scale": 1.0515902004712856,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Heart_Failure_09.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Heart_Failure_09.jpg",
+      "label_count": 1,
+      "rotation_degrees": 0.20413957219324885,
+      "scale": 1.0858208441594013,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Heart_Failure_10.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Heart_Failure_10.jpg",
+      "label_count": 1,
+      "rotation_degrees": 5.461076473798132,
+      "scale": 0.9133380017534203,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Isaac_M_Scott_01.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Isaac_M_Scott_01.jpg",
+      "label_count": 1,
+      "rotation_degrees": -2.4910403391339973,
+      "scale": 0.9860597463895667,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Isaac_M_Scott_02.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Isaac_M_Scott_02.jpg",
+      "label_count": 1,
+      "rotation_degrees": 0.9957094756553122,
+      "scale": 0.9517729186341864,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Isaac_M_Scott_03.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Isaac_M_Scott_03.jpg",
+      "label_count": 1,
+      "rotation_degrees": -4.133188574490481,
+      "scale": 1.077623664131836,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Isaac_M_Scott_05.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Isaac_M_Scott_05.jpg",
+      "label_count": 1,
+      "rotation_degrees": -6.007124706635464,
+      "scale": 0.9576661514015156,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Isaac_M_Scott_06.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Isaac_M_Scott_06.jpg",
+      "label_count": 1,
+      "rotation_degrees": 1.3779690370037248,
+      "scale": 1.0108181004346537,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_James_Davidson_01.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_James_Davidson_01.jpg",
+      "label_count": 1,
+      "rotation_degrees": 0.9676152320989733,
+      "scale": 0.9576842428862421,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_James_Davidson_02.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_James_Davidson_02.jpg",
+      "label_count": 1,
+      "rotation_degrees": -1.3936585171057168,
+      "scale": 1.0636241941941822,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_James_Davidson_03.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_James_Davidson_03.jpg",
+      "label_count": 1,
+      "rotation_degrees": 7.345242283159076,
+      "scale": 0.9738808822183362,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_James_Davidson_04.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_James_Davidson_04.jpg",
+      "label_count": 1,
+      "rotation_degrees": 0.8417841683405953,
+      "scale": 1.0187848403226336,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Lucinda_van_Valkenburg_05.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Lucinda_van_Valkenburg_05.jpg",
+      "label_count": 1,
+      "rotation_degrees": -5.672423389015492,
+      "scale": 0.9813020673496253,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Lucinda_van_Valkenburg_06.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Lucinda_van_Valkenburg_06.jpg",
+      "label_count": 1,
+      "rotation_degrees": 6.559343386596751,
+      "scale": 0.9086133777136408,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Lucinda_van_Valkenburg_07.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Lucinda_van_Valkenburg_07.jpg",
+      "label_count": 1,
+      "rotation_degrees": -1.3538554020604057,
+      "scale": 1.0659607970556206,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Lucinda_van_Valkenburg_12.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Lucinda_van_Valkenburg_12.jpg",
+      "label_count": 1,
+      "rotation_degrees": -7.840727027083329,
+      "scale": 0.9730092315516542,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Lucinda_van_Valkenburg_13.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Lucinda_van_Valkenburg_13.jpg",
+      "label_count": 1,
+      "rotation_degrees": 2.441833221386215,
+      "scale": 0.9547698197199115,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Lucinda_van_Valkenburg_14.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Lucinda_van_Valkenburg_14.jpg",
+      "label_count": 1,
+      "rotation_degrees": 3.242433130556581,
+      "scale": 1.0887602853884182,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Lucinda_van_Valkenburg_15.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Lucinda_van_Valkenburg_15.jpg",
+      "label_count": 1,
+      "rotation_degrees": 5.836452726412386,
+      "scale": 0.9118928303200677,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Lucinda_van_Valkenburg_16.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Lucinda_van_Valkenburg_16.jpg",
+      "label_count": 1,
+      "rotation_degrees": -1.907671867025769,
+      "scale": 0.9859548122357153,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Lucinda_van_Valkenburg_17.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Lucinda_van_Valkenburg_17.jpg",
+      "label_count": 1,
+      "rotation_degrees": 7.623397150976713,
+      "scale": 1.0551382376203657,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Lucinda_van_Valkenburg_18.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Lucinda_van_Valkenburg_18.jpg",
+      "label_count": 1,
+      "rotation_degrees": -3.058282196491824,
+      "scale": 0.9539673571001601,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Lucinda_van_Valkenburg_19.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Lucinda_van_Valkenburg_19.jpg",
+      "label_count": 1,
+      "rotation_degrees": 6.100914763803038,
+      "scale": 1.002141301108729,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Monrovia_01.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Monrovia_01.jpg",
+      "label_count": 1,
+      "rotation_degrees": -2.491268304602796,
+      "scale": 1.0989834696321836,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Monrovia_02.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Monrovia_02.jpg",
+      "label_count": 1,
+      "rotation_degrees": -5.076601937175001,
+      "scale": 1.076019624260814,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Monrovia_03.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Monrovia_03.jpg",
+      "label_count": 1,
+      "rotation_degrees": 4.997366369780064,
+      "scale": 1.0335778811142704,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Monrovia_04.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Monrovia_04.jpg",
+      "label_count": 1,
+      "rotation_degrees": 6.8114332354307,
+      "scale": 1.049649700660351,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Monrovia_05.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Monrovia_05.jpg",
+      "label_count": 1,
+      "rotation_degrees": 5.771222552762843,
+      "scale": 0.9494293480644216,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Monrovia_06.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Monrovia_06.jpg",
+      "label_count": 1,
+      "rotation_degrees": 2.7209895890389753,
+      "scale": 1.0429237073309505,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Monrovia_07.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Monrovia_07.jpg",
+      "label_count": 1,
+      "rotation_degrees": -5.327153139483645,
+      "scale": 0.9791114546209753,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Monrovia_08.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Monrovia_08.jpg",
+      "label_count": 1,
+      "rotation_degrees": 0.9824122808035671,
+      "scale": 1.0156671829852546,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Montana_01.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Montana_01.jpg",
+      "label_count": 1,
+      "rotation_degrees": -4.893923633747303,
+      "scale": 1.005204449723575,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Montana_02.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Montana_02.jpg",
+      "label_count": 1,
+      "rotation_degrees": -6.577029756059648,
+      "scale": 1.0963885386253414,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Montana_03.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Montana_03.jpg",
+      "label_count": 1,
+      "rotation_degrees": 1.1423296072923907,
+      "scale": 0.901281776532862,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Montana_04.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Montana_04.jpg",
+      "label_count": 1,
+      "rotation_degrees": 7.652251421442331,
+      "scale": 1.0179740056641902,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Montana_05.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Montana_05.jpg",
+      "label_count": 1,
+      "rotation_degrees": -2.88509381947736,
+      "scale": 0.937501543145557,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Montana_06.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Montana_06.jpg",
+      "label_count": 1,
+      "rotation_degrees": -4.87828162469112,
+      "scale": 1.0155375785035718,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Montana_07.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Montana_07.jpg",
+      "label_count": 1,
+      "rotation_degrees": 1.6358268220740122,
+      "scale": 1.0924846186248762,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Montana_08.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Montana_08.jpg",
+      "label_count": 1,
+      "rotation_degrees": -0.00043482146210394035,
+      "scale": 1.0488194958565298,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Viator_01.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Viator_01.jpg",
+      "label_count": 1,
+      "rotation_degrees": -5.164372152405459,
+      "scale": 0.9776133463569039,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Viator_02.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Viator_02.jpg",
+      "label_count": 1,
+      "rotation_degrees": 3.614093820412428,
+      "scale": 0.9175535773518974,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Viator_04.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Viator_04.jpg",
+      "label_count": 1,
+      "rotation_degrees": -1.6785326662725186,
+      "scale": 1.0747045262241466,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Viator_05.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Viator_05.jpg",
+      "label_count": 1,
+      "rotation_degrees": 6.60195093825417,
+      "scale": 1.0531834235477746,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Viator_06.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Viator_06.jpg",
+      "label_count": 1,
+      "rotation_degrees": 6.645183361788254,
+      "scale": 0.9254806018097813,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Viator_07.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Viator_07.jpg",
+      "label_count": 1,
+      "rotation_degrees": -6.874779942892511,
+      "scale": 1.0737708588694639,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Viator_08.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Viator_08.jpg",
+      "label_count": 1,
+      "rotation_degrees": 2.145119669559092,
+      "scale": 0.9993143387597706,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Viator_09.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Viator_09.jpg",
+      "label_count": 1,
+      "rotation_degrees": 2.779735003636379,
+      "scale": 0.9636034775691596,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Viator_10.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Viator_10.jpg",
+      "label_count": 1,
+      "rotation_degrees": 3.374077812255118,
+      "scale": 0.992071065773465,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_Viator_11.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_Viator_11.jpg",
+      "label_count": 1,
+      "rotation_degrees": 4.634651719357926,
+      "scale": 0.9185490951046762,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WH_Gilbert_01.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WH_Gilbert_01.jpg",
+      "label_count": 1,
+      "rotation_degrees": 1.2601360531760406,
+      "scale": 0.9394469894591737,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WH_Gilbert_02.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WH_Gilbert_02.jpg",
+      "label_count": 1,
+      "rotation_degrees": -0.17846342193184128,
+      "scale": 1.097739066673564,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WH_Gilbert_04.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WH_Gilbert_04.jpg",
+      "label_count": 1,
+      "rotation_degrees": -5.0729068051885005,
+      "scale": 1.0926038280248536,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WH_Gilbert_05.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WH_Gilbert_05.jpg",
+      "label_count": 1,
+      "rotation_degrees": -0.2998320547957025,
+      "scale": 1.0627068128359272,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WH_Gilbert_06.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WH_Gilbert_06.jpg",
+      "label_count": 1,
+      "rotation_degrees": 1.6455824838578614,
+      "scale": 1.031024212798276,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Rend_02.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Rend_02.jpg",
+      "label_count": 1,
+      "rotation_degrees": -6.955673337419338,
+      "scale": 1.0669976407916801,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Rend_04.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Rend_04.jpg",
+      "label_count": 1,
+      "rotation_degrees": -1.8909635205401791,
+      "scale": 0.965109123220141,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Rend_05.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Rend_05.jpg",
+      "label_count": 1,
+      "rotation_degrees": 4.499048033222051,
+      "scale": 0.9971070277559176,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Rend_06.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Rend_06.jpg",
+      "label_count": 1,
+      "rotation_degrees": -1.2379456572035004,
+      "scale": 1.0755057811743594,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Rend_07.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Rend_07.jpg",
+      "label_count": 1,
+      "rotation_degrees": 3.3347001106218563,
+      "scale": 1.0578309247410294,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Rend_09.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Rend_09.jpg",
+      "label_count": 1,
+      "rotation_degrees": 4.787142075457837,
+      "scale": 0.9644573449479664,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Rend_10.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Rend_10.jpg",
+      "label_count": 1,
+      "rotation_degrees": -4.394744929989358,
+      "scale": 0.9724615900969139,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Rend_11.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Rend_11.jpg",
+      "label_count": 1,
+      "rotation_degrees": -1.3208302047299227,
+      "scale": 1.008281996726033,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Thew_04.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Thew_04.jpg",
+      "label_count": 1,
+      "rotation_degrees": -1.4888351897711019,
+      "scale": 0.9000601380213846,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Thew_05.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Thew_05.jpg",
+      "label_count": 1,
+      "rotation_degrees": 3.9100916215583847,
+      "scale": 1.0703751824468515,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Thew_09.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Thew_09.jpg",
+      "label_count": 1,
+      "rotation_degrees": 3.260572308268765,
+      "scale": 1.0642206176789277,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Thew_10.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Thew_10.jpg",
+      "label_count": 1,
+      "rotation_degrees": 7.7092531659487005,
+      "scale": 1.0687581124737455,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Thew_11.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Thew_11.jpg",
+      "label_count": 1,
+      "rotation_degrees": 7.675019336154504,
+      "scale": 1.0947968809704711,
+      "horizontal_flip": false
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Thew_15.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Thew_15.jpg",
+      "label_count": 1,
+      "rotation_degrees": 0.05883166720926347,
+      "scale": 1.0506893077167812,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Thew_16.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Thew_16.jpg",
+      "label_count": 1,
+      "rotation_degrees": -0.3816468484999511,
+      "scale": 1.072757248219417,
+      "horizontal_flip": true
+    },
+    {
+      "source": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection/train/images/shipwrecks_WP_Thew_17.jpg",
+      "image": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/experiments/bounded_shipwreck_aug/train/images/aug_shipwreck_shipwrecks_WP_Thew_17.jpg",
+      "label_count": 1,
+      "rotation_degrees": 3.2250970569899646,
+      "scale": 0.9587848511949115,
+      "horizontal_flip": false
+    }
+  ]
+}

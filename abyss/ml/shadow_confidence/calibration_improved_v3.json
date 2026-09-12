@@ -1,0 +1,34 @@
+{
+  "coefficients": [
+    1.2703268520032618,
+    0.26322968641954725,
+    0.3627217506619807
+  ],
+  "data_yaml": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection_enhanced/data.yaml",
+  "feature_names": [
+    "detector_confidence",
+    "shadow_consistency_score",
+    "image_quality_score"
+  ],
+  "fit_split": "val",
+  "image_dir": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/data/processed/detection_enhanced/val/images",
+  "imgsz": 768,
+  "intercept": -1.9990305253972676,
+  "negative_count": 345,
+  "positive_count": 79,
+  "prediction_conf": 0.05,
+  "preprocess_mode": "enhanced",
+  "scaler_mean": [
+    0.27840524520900733,
+    0.23722861400874848,
+    0.7293383636125406
+  ],
+  "scaler_scale": [
+    0.23631123978945132,
+    0.2215303597933208,
+    0.09841978291712569
+  ],
+  "temperature": 0.9865162626628023,
+  "validation_count": 424,
+  "weights": "/Users/g.o.a.t/Documents/ChatGPT/SIH/abyss/ml/detection/weights/improved_v2_baseline_finetune_adamw.pt"
+}

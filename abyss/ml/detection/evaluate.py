@@ -10,6 +10,7 @@ inference latency on the processed test images.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import statistics
 import time
 from pathlib import Path
@@ -25,6 +26,7 @@ def main() -> None:
     parser.add_argument("--data-yaml", type=Path, default=DATA_YAML)
     parser.add_argument("--output-json", type=Path, default=LOGS_ROOT / "baseline_metrics.json")
     parser.add_argument("--imgsz", type=int, default=640)
+    parser.add_argument("--split", choices=("val", "test"), default="test")
     parser.add_argument("--device", default=None)
     args = parser.parse_args()
 
@@ -35,16 +37,16 @@ def main() -> None:
     with args.data_yaml.open("r", encoding="utf-8") as handle:
         data_config = yaml.safe_load(handle)
     dataset_root = Path(data_config["path"])
-    test_image_dir = dataset_root / data_config.get("test", "test/images")
-    image_paths = sorted(test_image_dir.glob("*"))
+    split_image_dir = dataset_root / data_config[args.split]
+    image_paths = sorted(split_image_dir.glob("*"))
     image_paths = [path for path in image_paths if path.suffix.lower() in {".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff"}]
     if not image_paths:
-        raise ValueError(f"No test images found in {test_image_dir}")
+        raise ValueError(f"No {args.split} images found in {split_image_dir}")
 
     logger = setup_logging("phase2_evaluate")
     logger.info("Loading model weights from %s", args.weights)
     model = YOLO(str(args.weights))
-    val_kwargs = {"data": str(args.data_yaml), "split": "test", "imgsz": args.imgsz, "verbose": True}
+    val_kwargs = {"data": str(args.data_yaml), "split": args.split, "imgsz": args.imgsz, "verbose": True}
     if args.device:
         val_kwargs["device"] = args.device
     metrics = model.val(**val_kwargs)
@@ -60,11 +62,25 @@ def main() -> None:
 
     result = {
         "weights": str(args.weights),
-        "test_image_count": len(image_paths),
+        "weights_sha256": hashlib.sha256(args.weights.read_bytes()).hexdigest(),
+        "data_yaml": str(args.data_yaml.resolve()),
+        "imgsz": args.imgsz,
+        "evaluation_split": args.split,
+        "image_count": len(image_paths),
         "precision": float(metrics.box.mp),
         "recall": float(metrics.box.mr),
         "map50": float(metrics.box.map50),
         "map50_95": float(metrics.box.map),
+        "per_class": {
+            str(data_config["names"][int(class_id)]): {
+                "class_id": int(class_id),
+                "precision": float(metrics.box.p[index]),
+                "recall": float(metrics.box.r[index]),
+                "ap50": float(metrics.box.ap50[index]),
+                "ap50_95": float(metrics.box.ap[index].mean()),
+            }
+            for index, class_id in enumerate(metrics.box.ap_class_index)
+        },
         "latency_ms_per_image": {
             "mean": statistics.mean(latencies_ms),
             "median": statistics.median(latencies_ms),
