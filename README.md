@@ -129,7 +129,7 @@ python -m abyss.ingestion.loader --input data/raw/ --output data/processed/
 ### 3 · Start Backend (FastAPI)
 
 ```bash
-uvicorn abyss.api.main:app --reload --port 8000
+PYTHONPATH=. .venv/bin/uvicorn abyss.backend.app.main:app --host 127.0.0.1 --port 8000
 ```
 
 > [!NOTE]
@@ -138,13 +138,12 @@ uvicorn abyss.api.main:app --reload --port 8000
 ### 4 · Start Frontend (React + Vite)
 
 ```bash
-cd frontend
-npm install
-npm run dev
+npm install --prefix frontend
+npm run frontend
 ```
 
 > [!NOTE]
-> Frontend dev server runs on **`http://localhost:5173`** and expects the backend at port `8000`. Update `VITE_API_BASE_URL` in `frontend/.env` if changed.
+> Frontend dev server runs on **`http://localhost:5173`** and expects the backend at port `8000`. Update `VITE_ABYSS_API_BASE` in `frontend/.env` if changed.
 
 ### 5 · Run Tests
 
