@@ -1,3 +1,4 @@
+import { Canvas } from "@react-three/fiber";
 import { AlertTriangle, CheckCircle2, Crosshair, Loader2, Radar, ServerCrash, Upload } from "lucide-react";
 import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from "react";
 
@@ -186,6 +187,51 @@ function PriorityList({ items, detections }: { items: PriorityItem[]; detections
   </section>;
 }
 
+function SeabedMap({ detections, selectedId, onSelect }: {
+  detections: SessionDetection[];
+  selectedId: number | null;
+  onSelect: (id: number) => void;
+}) {
+  const geolocated = detections.filter((detection) => detection.geo);
+  const origin = geolocated[0]?.geo;
+  const maxDelta = Math.max(
+    0.000001,
+    ...geolocated.map((detection) => Math.abs(detection.geo.lat - (origin?.lat ?? detection.geo.lat))),
+    ...geolocated.map((detection) => Math.abs(detection.geo.lon - (origin?.lon ?? detection.geo.lon))),
+  );
+
+  return <section className="border border-slate-700 bg-slate-950 p-4">
+    <div className="flex items-start justify-between gap-3">
+      <div>
+        <h2 className="text-base font-semibold">3D Map</h2>
+        <p className="mt-1 text-xs text-slate-400">Procedural seabed; marker positions come from API geolocation output.</p>
+      </div>
+      <span className="border border-amber-500 px-2 py-0.5 text-xs text-amber-200">
+        {geolocated.some((detection) => detection.geo.geolocation_source === "simulated") ? "Simulated coordinates" : "Provided metadata"}
+      </span>
+    </div>
+    <div className="mt-4 h-72 border border-slate-800 bg-slate-900">
+      <Canvas camera={{ position: [0, 8, 11], fov: 45 }}>
+        <ambientLight intensity={0.7} />
+        <directionalLight position={[4, 8, 5]} intensity={1.1} />
+        <mesh rotation={[-Math.PI / 2, 0, 0]}>
+          <planeGeometry args={[16, 16, 44, 44]} />
+          <meshStandardMaterial color="#155e75" wireframe />
+        </mesh>
+        {geolocated.map((detection) => {
+          const x = ((detection.geo.lon - (origin?.lon ?? detection.geo.lon)) / maxDelta) * 6;
+          const z = -((detection.geo.lat - (origin?.lat ?? detection.geo.lat)) / maxDelta) * 6;
+          const selected = detection.detection_id === selectedId;
+          return <mesh key={detection.detection_id} position={[x, selected ? 0.75 : 0.45, z]} onClick={() => onSelect(detection.detection_id)}>
+            <sphereGeometry args={[selected ? 0.38 : 0.25, 24, 24]} />
+            <meshStandardMaterial color={selected ? "#facc15" : detection.class_name === "UNKNOWN_ANOMALY" ? "#fb7185" : "#22d3ee"} />
+          </mesh>;
+        })}
+      </Canvas>
+    </div>
+  </section>;
+}
+
 export default function App() {
   const [file, setFile] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
@@ -313,7 +359,10 @@ export default function App() {
             <span>Backend latency: {response ? `${response.processing_latency_ms.toFixed(1)} ms` : "Not run"}</span>
           </div>
         </section>
-        <ConfidenceBreakdown detection={selected} />
+        <div className="space-y-4">
+          <ConfidenceBreakdown detection={selected} />
+          <SeabedMap detections={detections} selectedId={selectedId} onSelect={setSelectedId} />
+        </div>
       </div>
       <PriorityList items={priorities} detections={detections} />
     </div>
